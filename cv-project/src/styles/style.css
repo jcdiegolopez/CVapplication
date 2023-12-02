@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-inter: Inter;
+
+  /* Colors */
+  --color-blue: #2622ff;
+  --color-white: #fff;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-4xl: 23px;
+}
+
+.logo {
+    position: relative;
+    font-weight: 600;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-3xs) var(--padding-4xl) var(--padding-3xs) 0;
+  }
+
+  .get-started {
+    position: relative;
+  }
+
+  .get-started-wrapper,
+  .headercolored,
+  .headercolored-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .get-started-wrapper {
+    border-radius: 10px;
+    background-color: var(--color-white);
+    align-items: flex-start;
+    padding: var(--padding-3xs) var(--padding-4xl);
+  }
+
+  .headercolored,
+  .headercolored-inner {
+    align-items: center;
+    font-size: 18px;
+    color: var(--color-blue);
+  }
+
+  .headercolored {
+    position: relative;
+    background-color: var(--color-blue);
+    box-shadow: 130px 140px 250px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px 80px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 22px;
+    color: var(--color-white);
+    font-family: var(--font-inter);
+  }
+  
+.cv-application{
+  display: flex;
+    width: 100%; 
+    height: 100vh;
+}
+
+.forms-style{
+  flex: 1; 
+  height: 100%;
+
+}
+
+.forms-style {
+  background-color: lightblue; 
+}
+
+.cv-page {
+  background-color: lightgreen;
+}
