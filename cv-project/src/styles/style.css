@@ -82,13 +82,17 @@ body {
 
 }
 
-.forms-style {
-  
-}
-
 .cv-page {
   
 }
+
+.GeneralhtmlForm {
+  position: relative;
+  height: auto;
+  width: 25vw;
+  margin: auto;
+}
+
 
 
 .general-form-style {
