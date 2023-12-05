@@ -21,8 +21,13 @@ function App() {
   const generatePDF = () => {
     console.log('Generating PDF');
     const element = document.getElementById('printable'); // Replace 'elementId' with the ID of the HTML element you want to convert to PDF
-  
-    html2pdf(element);
+    const options = {
+      filename: 'cv.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    };
+    html2pdf(element,options);
   };
 
 

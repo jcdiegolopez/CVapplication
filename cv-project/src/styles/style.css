@@ -83,15 +83,15 @@ body {
   padding: 5%;
   flex: 1;
   max-width: 100%; 
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
 }
 .cv-page{
   margin: 0 auto;
   flex: 1;
-  max-width: 100%; 
-  height: 100vh;
+  max-width: 21cm;
+  height: 29.6cm; 
   display: flex;
   justify-content: center;
 }
