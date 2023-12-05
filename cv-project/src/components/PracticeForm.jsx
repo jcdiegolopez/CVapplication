@@ -1,41 +1,47 @@
-export default function PracticeForm({ practice }){
+import {useState} from 'react';
+
+
+export default function PracticeForm({ practice,handleChange }){
+    const [editable, setEditable] = useState(false);
+    
+    const type = "practice";
     return(
         <div className="GeneralhtmlForm">
-            <form  className="general-form-style" onSubmit={(e)=> e.preventDefault()}>
+            <form className="general-form-style" onSubmit={(e)=> e.preventDefault()}>
             <h1 className="general-form-title">Practice Information</h1>
             <hr/>
             <br/>
             <div>
                 <label htmlFor="company">Compañia:</label>
-                <input type="text" id="company" name="company" value={practice.company} required/>
+                <input disabled={editable} type="text" id="company" name="company" value={practice.company} onChange={(e)=> handleChange(e,type)} required/>
             </div>
             
 
             <div>
                 <label htmlFor="position">Posición:</label>
-                <input type="text" id="position" name="position"  value={practice.position} required/>
+                <input disabled={editable} type="text" id="position" name="position"  value={practice.position} onChange={(e)=> handleChange(e,type)} required/>
             </div>
             
 
             <div>
                 <label htmlFor="responsability">Responsibilidades:</label>
-                <input type="text" id="responsability" name="responsability"  value={practice.responsability} required/>
+                <input disabled={editable} type="text" id="responsability" name="responsability"  value={practice.responsability} onChange={(e)=> handleChange(e,type)} required/>
             </div>
             
 
             <div>
-                <label htmlFor="start">Fecha de inicio:</label>
-                <input type="date" id="start" name="start"  value={practice.started} required/>
+                <label htmlFor="started">Fecha de inicio:</label>
+                <input disabled={editable} type="date" id="started" name="started"  value={practice.started} onChange={(e)=> handleChange(e,type)} required/>
             </div>
 
             <div>
-                <label htmlFor="finish">Fecha de salida:</label>
-                <input type="date" id="finish" name="finish"  value={practice.finished} required/>
+                <label htmlFor="finished">Fecha de salida:</label>
+                <input disabled={editable} type="date" id="finished" name="finished"  value={practice.finished} onChange={(e)=> handleChange(e,type)} required/>
             </div>
             
 
 
-            <button type="submit">Enviar</button>
+            <button  onClick={()=> setEditable(!editable)}>{editable ?"Editar" : "Bloquear"}</button>
             </form>   
         </div>   
     );

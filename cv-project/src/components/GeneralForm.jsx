@@ -1,6 +1,9 @@
+import {useState} from 'react';
 
-export default function GeneralForm( { general } ){
-
+export default function GeneralForm( { general, handleChange } ){
+    const [editable, setEditable] = useState(false);
+    
+    const type = "general";
     return(
         <div className="GeneralhtmlForm">
             <form  className="general-form-style" onSubmit={(e)=> e.preventDefault()}>
@@ -8,31 +11,31 @@ export default function GeneralForm( { general } ){
             <hr/>
             <br/>
             <div>
-                <label htmlFor="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" value={general.firstname} required/>
+                <label htmlFor="firstname">Nombre:</label>
+                <input disabled={editable} type="text" id="firstname" name="firstname" value={general.firstname} onChange={(e)=> handleChange(e,type)} required/>
             </div>
             
 
             <div>
-                <label htmlFor="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido"  value={general.lastname} required/>
+                <label htmlFor="lastname">Apellido:</label>
+                <input disabled={editable} type="text" id="lastname" name="lastname"  value={general.lastname} onChange={(e)=> handleChange(e,type)} required/>
             </div>
             
 
             <div>
-                <label htmlFor="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono"  value={general.tel} required/>
+                <label htmlFor="tel">Teléfono:</label>
+                <input disabled={editable} type="tel" id="tel" name="tel"  value={general.tel} onChange={(e)=> handleChange(e,type)} required/>
             </div>
             
 
             <div>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email"value={general.mail} required/>
+                <label htmlFor="mail">Email:</label>
+                <input disabled={editable} type="email" id="mail" name="mail"value={general.mail} onChange={(e)=> handleChange(e,type)} required/>
             </div>
             
 
 
-            <button type="submit">Enviar</button>
+            <button onClick={()=> setEditable(!editable)} >{editable ?"Editar" : "Bloquear"}</button>
             </form>   
         </div>   
         

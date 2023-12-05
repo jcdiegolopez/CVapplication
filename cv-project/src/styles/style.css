@@ -2,6 +2,10 @@
 body {
   margin: 0;
   line-height: normal;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
 }
 :root {
   /* fonts */
@@ -12,8 +16,8 @@ body {
   --color-white: #fff;
 
   /* Paddings */
-  --padding-3xs: 10px;
-  --padding-4xl: 23px;
+  --padding-3xs: 1%;
+  --padding-4xl: 1%;
 }
 
 .logo {
@@ -29,11 +33,8 @@ body {
     padding: var(--padding-3xs) var(--padding-4xl) var(--padding-3xs) 0;
   }
 
-  .get-started {
-    position: relative;
-  }
 
-  .get-started-wrapper,
+
   .headercolored,
   .headercolored-inner {
     display: flex;
@@ -41,12 +42,7 @@ body {
     justify-content: flex-start;
   }
 
-  .get-started-wrapper {
-    border-radius: 10px;
-    background-color: var(--color-white);
-    align-items: flex-start;
-    padding: var(--padding-3xs) var(--padding-4xl);
-  }
+
 
   .headercolored,
   .headercolored-inner {
@@ -58,16 +54,17 @@ body {
   .headercolored {
     position: relative;
     background-color: var(--color-blue);
-    box-shadow: 130px 140px 250px rgba(0, 0, 0, 0.18);
+    box-shadow: 10vw 10vh 18vw rgba(0, 0, 0, 0.18);
     width: 100%;
     justify-content: space-between;
-    padding: 15px 80px;
+    padding: 1% 6%;
     box-sizing: border-box;
     text-align: left;
-    font-size: 22px;
+    font-size: 1.4vw;
     color: var(--color-white);
     font-family: var(--font-inter);
   }
+  
   
 .cv-application{
   display: flex;
@@ -77,14 +74,22 @@ body {
 
 .forms-style{
   flex: 1;
-  max-width: 50%; 
+  max-width: 40%; 
   height: 100%;
 
 }
 
-.cv-page {
-  
+.cv-page{
+  margin: 0 auto;
+  padding: 5%;
+  flex: 1;
+  max-width: 100%; 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
+
+
 
 .GeneralhtmlForm {
   position: relative;
@@ -92,8 +97,6 @@ body {
   width: 25vw;
   margin: auto;
 }
-
-
 
 .general-form-style {
   width: 70%;
@@ -152,3 +155,52 @@ body {
 }
 
 
+.cv-sheet {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  width: 100%;
+  background-color: #e4e3e3; /* Color de fondo general */
+  overflow: hidden
+}
+
+.left-side {
+  flex: 1;
+  background-color: #3F909C;
+  height: fit-content; /* Color de fondo para la sección izquierda */
+  color: #fff; /* Color del texto para la sección izquierda */
+  padding: 4%;
+  box-sizing: border-box;
+}
+
+.right-side {
+  flex: 2; /* Ajusta el factor de flexibilidad según tus preferencias */
+  background-color: rgb(243, 243, 243); /* Color de fondo para la sección derecha */
+  padding: 4%;
+  box-sizing: border-box;
+}
+
+.general-section h1,
+.study-section h1,
+.practice-section h1 {
+  color: #333; /* Color del título de las secciones */
+}
+.general-section{
+  text-wrap: break-word;
+}
+.general-section h1 {
+  font-size:  2.5vw;
+  color: #333;
+  display: inline-block;
+  width: fit-content; /* Ajusta el ancho al contenido sin cambiar el tamaño del texto */
+}
+
+ul {
+  
+  padding: 0;
+  margin-left: 10%;
+}
+
+li {
+  margin-bottom: 10px;
+}
