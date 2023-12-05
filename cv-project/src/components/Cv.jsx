@@ -1,8 +1,8 @@
 
 
-export default function Cv({data}){
+export default function Cv({data, onClick}){
     return (
-        <div className="cv-sheet">
+        <div className="cv-sheet" id="printable" onClick={onClick}>
         <div className="left-side">
             <div className="general-section">
                 <h1> {data.general.firstname} {data.general.lastname}</h1>

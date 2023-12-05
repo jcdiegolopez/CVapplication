@@ -6,6 +6,8 @@ import PracticeForm from './components/PracticeForm';
 import StudyForm from './components/StudyForm';
 import initialData from './assets/initialData.js';
 import Cv from './components/Cv.jsx';
+import html2pdf from 'html2pdf.js';
+
 
 function App() {
   const [info, setInfo] = useState(initialData);
@@ -15,6 +17,13 @@ function App() {
     const {name, value} = e.target;
     setInfo({...info, [type]:{...info[type],[name]:value}});
   }
+
+  const generatePDF = () => {
+    console.log('Generating PDF');
+    const element = document.getElementById('printable'); // Replace 'elementId' with the ID of the HTML element you want to convert to PDF
+  
+    html2pdf(element);
+  };
 
 
   return (
@@ -26,9 +35,11 @@ function App() {
           <StudyForm  study={info.study} handleChange={handleChange}/>
           <PracticeForm practice={info.practice} handleChange={handleChange}/>
         </div>
-        <div className='cv-page'>
-          <Cv data={info}/>
+        <div className='anose'>
+        <div className='cv-page' id="printable">
+          <Cv data={info} onClick={generatePDF}/>
         </div>
+      </div>
       </div>
     </>
   )
