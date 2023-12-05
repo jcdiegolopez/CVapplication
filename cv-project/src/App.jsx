@@ -25,7 +25,6 @@ function App() {
           <GeneralForm  general={info.general} handleChange={handleChange} / >
           <StudyForm  study={info.study} handleChange={handleChange}/>
           <PracticeForm practice={info.practice} handleChange={handleChange}/>
-          <h1>box 1</h1>
         </div>
         <div className='cv-page'>
           <Cv data={info}/>
